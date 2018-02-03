@@ -2,13 +2,18 @@ import java.util.Scanner;
 
 public class Fibonacci {
     private static long n;
+    private static long elapsedTime;
+    private static long elapsedTimeR;
+
     public Fibonacci() {
         long n = 0;
     }
+
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         long z = 0;
-        while (z < 1) {
+        while (true) {
+            if (!(z < 1)) break;
             System.out.println("Positive Zahl eingeben eingeben");
             z = s.nextInt();
         }
@@ -16,12 +21,12 @@ public class Fibonacci {
         long startTime = System.currentTimeMillis();
         System.out.println(itFib(n));
         long stopTime = System.currentTimeMillis();
-        long elapsedTime = stopTime - startTime;
+        elapsedTime = stopTime - startTime;
         System.out.println("Zeit in Millisekunden mit Iterativer Berechnung: " + elapsedTime + "\n");
         long startTimeR = System.currentTimeMillis();
         System.out.println(recFib(n));
         long stopTimeR = System.currentTimeMillis();
-        long elapsedTimeR = stopTimeR - startTimeR;
+        elapsedTimeR = stopTimeR - startTimeR;
         System.out.println("Zeit in Millisekunden mit Rekursiver Berechnung: " + elapsedTimeR);
         s.close();
     }
@@ -37,6 +42,7 @@ public class Fibonacci {
             return recFib(n-2) + recFib(n-1);
         }
     }
+
     private static long itFib(long n) {
         long a = 0;
         long b = 0;
@@ -51,5 +57,13 @@ public class Fibonacci {
         }
         if (a<b) {return b;}
         else {return a;}
+    }
+
+    public long getElapsedTime() {
+        return elapsedTime;
+    }
+
+    public long getElapsedTimeR() {
+        return elapsedTimeR;
     }
 }
