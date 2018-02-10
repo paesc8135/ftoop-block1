@@ -8,5 +8,4 @@ class FibonacciTest {
         Fibonacci testie = new Fibonacci();
         assertTrue(testie.getElapsedTime() < testie.getElapsedTimeR());
     }
-
 }

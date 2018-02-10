@@ -7,7 +7,7 @@ public class Backend {
         this.y = y;
     }
 
-    public int rechneXminusY() {
+    public long rechneXminusY() {
         return x - y;
     }
 
